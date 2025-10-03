@@ -9,12 +9,24 @@
     <body>
         <!-- <h1 class="title">PRODUCTIVITY MANAGER</h1> -->
         <form id="login-form" class="login-form"    action="/login" method="POST">
-            <h2 class="subtitle">Welcome</h2>
+            <h2 class="subtitle">Sign Up</h2>
+            
+            <label for="fullname"><b>Full Name:</b></label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="text" id="email" name="email" required>
+            
             <label for="username"><b>Username:</b></label>
             <input type="text" id="username" name="username" required>
+            
             <label for="password"><b>Password:</b></label>
             <input type="text" id="password" name="password" required>
-            <button type="submit"><b>Login</b></button>
+            
+            <label for="password"><b>Confirm Password:</b></label>
+            <input type="text" id="password" name="password" required>
+
+            <button type="submit"><b>Register</b></button>
         </form>
     </body>
 </html>
