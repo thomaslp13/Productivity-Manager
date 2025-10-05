@@ -1,121 +1,165 @@
 :root {
-    --primary-color: #e0c57c;   /* beige */
-    --secondary-color: #14B8A6; /* teal accent */
-    --bg-color: #1F2937;        /* dark neutral background */
-    --card-bg: #2D3748;         /* form background */
-    --text-color: #F9FAFB;      /* main text */
-    --input-bg: #374151;        /* input background */
-    --button-bg: #111827;       /* button background */
+  /* Backgrounds */
+  --bg-gradient: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  
+  /* Text Colors */
+  --text-color: #1F2937;
+  --text-muted: #4B5563;
+  
+  /* Form Button Colors */
+  --form-button-bg: #6C63FF;
+  --form-button-hover: #5848C2;
+  
+  /* Action Button Colors */
+  --finance-color: #FF6B6B;       /* warm red */
+  --productivity-color: #4D96FF;  /* sky blue */
+  --academic-color: #FFB84D;      /* golden orange */
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.25s ease;
 }
 
 body {
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-gradient);
+  font-size: 16px;
+  color: var(--text-color);
 }
 
-.login-form {
-    max-width: 360px;
-    width: 100%;
-    padding: 28px;
-    border: 1px solid var(--primary-color);
-    border-radius: 16px;
-    background-color: var(--card-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+/* Card / Panel */
+.panel, .login-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: var(--card-bg);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
-    align-self: center;
-    background-color: var(--input-bg);
-    border: 1px solid #555;
-    border-radius: 8px;
-    padding: 12px;
-    width: 95%;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.login-form input[type="text"]:focus,
-.login-form input[type="password"]:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 6px var(--secondary-color);
-}
-
-.login-form button {
-    background: linear-gradient(170deg, var(--primary-color), rgb(112, 127, 125));
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    padding: 12px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.login-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--secondary-color);
-}
-
+/* Titles */
 .title {
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 8px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6C63FF;
 }
 
 .subtitle {
-    text-align: center;
-    color: white;
-    font-size: 2rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-style: bold;
-    text-shadow: var(--secondary-color) 0px 0px 8px;
-    margin-bottom: 20px;
-    font-weight: 500;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 16px;
 }
 
-.action-button {
-    background: linear-gradient(170deg, var(--primary-color), rgb(112, 127, 125));
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    padding: 12px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
-    width: 100%;
-    margin-top: 12px;
+/* Inputs */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  background-color: #FFFFFFCC;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  color: var(--text-color);
+  width: 100%;
 }
 
-.action-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--secondary-color);
+.login-form input:focus {
+  outline: none;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.35);
+  background-color: #FFFFFF;
 }
 
+/* Form Buttons */
+.login-form button {
+  background-color: var(--form-button-bg);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.login-form button:hover {
+  background-color: var(--form-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(108, 99, 255, 0.35);
+}
+
+/* Action Buttons */
+.action-finance,
+.action-productivity,
+.action-academic {
+  background-color: #FFFFFFCC;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+/* Individual Action Colors */
+.action-finance:hover {
+  background-color: var(--finance-color);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255, 107, 107, 0.35);
+  transform: translateY(-2px);
+}
+
+.action-productivity:hover {
+  background-color: var(--productivity-color);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(77, 150, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.action-academic:hover {
+  background-color: var(--academic-color);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255, 184, 77, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Panel spacing */
 .panel {
-    max-width: 400px;
-    width: 100%;
-    padding: 24px;
-    border: 1px solid var(--primary-color);
-    border-radius: 16px;
-    background-color: var(--card-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  gap: 16px;
+  margin: 20px;
+}
+
+/* Background overlay for fade-in images */
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind the panel */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease;
 }

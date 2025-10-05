@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background overlay for JPGs -->
+  <div class="bg-overlay" id="bgOverlay"></div>
+
+  <!-- Panel content -->
+  <panel class="panel">
+      <h1 class="title">Productivity Dashboard</h1>
+      <button class="action-productivity" data-img="productivity.jpg">Tasks</button>
+      <button class="action-productivity" data-img="productivity2.jpg">Calendar</button>
+      <button class="action-productivity" data-img="productivity3.jpg">Statistics</button>
+      
+      <a href="dashboard.html">
+        <button class="action-productivity" data-img="productivity4.jpg">Return</button>
+      </a>
+      
+  </panel>
+
+  <script>
+    const overlay = document.getElementById("bgOverlay");
+    const buttons = document.querySelectorAll("button[data-img]");
+
+    buttons.forEach(button => {
+      const img = button.getAttribute("data-img");
+
+      button.addEventListener("mouseenter", () => {
+        overlay.style.backgroundImage = `url(${img})`;
+        overlay.style.opacity = 1; // fade in
+      });
+
+      button.addEventListener("mouseleave", () => {
+        overlay.style.opacity = 0; // fade out to show gradient
+      });
+    });
+  </script>
+</body>
+</html>
