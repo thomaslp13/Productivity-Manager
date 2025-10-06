@@ -110,9 +110,10 @@ input{
     width: 60%;
     padding: 12px;
     margin-top: 45px;
+    border-color: var(--bg);
     color: var(--bg);
-    background: var(--primary);
-    border: none;
+    background: var(--text-dark);
+    border: solid;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
@@ -129,6 +130,11 @@ input{
   }
 
   body {
+    transition: background-image 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
     justify-content: center;
     align-items: center;
   }
@@ -148,41 +154,22 @@ input{
     height: 170px;
     margin: 20px auto;
     padding: 25px;
-    border: solid 2px var(--primary);
-    background-color: #020202;
+    border: solid 2px var(--bg);
+    background-color: var(--text-dark);
+    background-size: cover;
+    background-position: center;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
-    color: var(--primary);
+    color: var(--bg);
   }
+  
+  .box1 { background-image: url("images/finance.jpg"); }
+  .box2 { background-image: url("images/productivity.jpg"); }
+  .box3 { background-image: url("images/uni.jpg"); }
   
   .box:hover {
     transform: scale(1.05);
-  }
-
-  .finance {
-    background: #020202;
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 25px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-
-  .finance-btn {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
   }
